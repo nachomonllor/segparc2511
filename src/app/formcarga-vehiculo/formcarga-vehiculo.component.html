@@ -13,6 +13,26 @@
         </div>
     
      <br>
+
+     Año:
+     <input type = "an" name = "an" [(ngModel)] = "vehi.an" #an = "ngModel" />
+       
+      <br>
+
+      Kilometros:
+      <input type = "kilometros" name = "kilometros" [(ngModel)] = "vehi.kilometros" #kilometros = "ngModel" />
+        
+       <br>
+
+       Tipo: 
+       <select name = "selecttipo" class="form-control" id="exampleFormControlSelect1" required [(ngModel)] = "vehi.tipo">
+            <option>auto</option>
+            <option>camioneta</option>
+            <option>camion</option>
+        </select>
+  
+        
+    <br>
     <button type="submit" name ="submit" class="btn btn-success" (click) = "validar()" [disabled]="!formcargaVehiculo.form.valid"  >cargar vehiculo</button>
 
 
