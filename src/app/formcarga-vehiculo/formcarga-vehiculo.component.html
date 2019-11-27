@@ -1,0 +1,21 @@
+<form #formcargaVehiculo = "ngForm">
+    Marca:
+    <input type = "marca" name = "marca" [(ngModel)] = "vehi.marca" #marca = "ngModel" marca required/>
+        <div *ngIf = 'marca.invalid && (marca.dirty || marca.touched)' >
+            la marca es requerida
+        </div>
+    
+        <br>
+    Modelo:
+    <input type = "modelo" name = "modelo" [(ngModel)] = "vehi.modelo" #modelo = "ngModel" marca required/>
+        <div *ngIf = 'modelo.invalid && (modelo.dirty ||modelo.touched)' >
+            el modelo es requerido
+        </div>
+    
+     <br>
+    <button type="submit" name ="submit" class="btn btn-success" (click) = "validar()" [disabled]="!formcargaVehiculo.form.valid"  >cargar vehiculo</button>
+
+
+
+
+</form>
