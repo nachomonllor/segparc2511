@@ -1,0 +1,22 @@
+<form #loginForm="ngForm">
+
+    <input type = "text" name = "nombre" [(ngModel)] = "us.nombre" #nombre = "ngModel" nombre required/>
+    <div *ngIf = 'nombre.dirty ||nombre.touched'>
+        el nombre es requerido
+    </div>
+
+    <input type ="password" name = "password" [(ngModel)] = "us.clave" #clave = "ngModel" password  required minlength="6"  />
+    <div *ngIf = 'clave.invalid && (clave.dirty || clave.touched)'  >  
+        <div *ngIf = 'clave.errors.required'>
+            la clave es requerida
+        </div>
+        <div *ngIf = 'clave.errors.minlength'>
+           la clave debe tener al menos 6 caracteres
+        </div>
+    </div>
+    <br>
+
+    <button type="submit" name ="submit" class="btn btn-success" (click) = "validar()" [disabled]="!loginForm.form.valid"  >ingresar</button>
+
+
+</form>
