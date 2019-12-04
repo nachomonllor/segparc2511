@@ -30,8 +30,12 @@
             <option>camioneta</option>
             <option>camion</option>
         </select>
-  
-        
+
+        Foto:
+        <input type = "foto" name = "foto" [(ngModel)] = "vehi.foto" #kilometros = "ngModel" />
+          
+         <br>
+
     <br>
     <button type="submit" name ="submit" class="btn btn-success" (click) = "validar()" [disabled]="!formcargaVehiculo.form.valid"  >cargar vehiculo</button>
 
