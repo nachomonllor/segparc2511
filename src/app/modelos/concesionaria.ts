@@ -8,18 +8,18 @@ export class concesionaria {
         this.email = email;
         this.clave = clave;
     }
-*/
+    */
 
-/*
-"_id": "5de9a92f6b55b11fc8c2125f",
-"user": "juan",
-"pass": "jose1",
-"email": "",
-"razón_social": "",
-"teléfono": "",
-"localidad": "",
-"clave": "",
-"ip": "::1"*/
+    /*
+    "_id": "5de9a92f6b55b11fc8c2125f",
+    "user": "juan",
+    "pass": "jose1",
+    "email": "",
+    "razón_social": "",
+    "teléfono": "",
+    "localidad": "",
+    "clave": "",
+    "ip": "::1"*/
 
         user:string;
         pass:string;
