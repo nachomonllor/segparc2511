@@ -1,21 +1,23 @@
 
 <form #consecionariaForm="ngForm">
 
-    <input type="email" name = "email" [(ngModel)]="consec.email" #email="ngModel" email required />
+    <input type="email" name = "email" [(ngModel)]="conces.email" #email="ngModel" email required />
     <div *ngIf = 'email.invalid && (email.dirty || email.touched)' >   el email es requerido </div>
 
-    <input type ="password" name = "password" [(ngModel)] = "consec.clave" #clave = "ngModel" password  required minlength="6"  />
-    <div *ngIf = 'clave.invalid && (clave.dirty || clave.touched)'  >  
-        <div *ngIf = 'clave.errors.required'>
+    <input type ="password" name = "password" [(ngModel)] = "conces.pass" #pass = "ngModel" password  required minlength="6"  />
+    <div *ngIf = 'pass.invalid && (pass.dirty || pass.touched)'  >  
+        <div *ngIf = 'pass.errors.required'>
                 la clave es requerida
         </div>
-        <div *ngIf = 'clave.errors.minlength'>
+        <div *ngIf = 'pass.errors.minlength'>
             al menos debe tener la clave 6 caracteres
         </div>
-
-    
-
     </div>
+    <br>
+
+    <input type="user" name = "user" [(ngModel)]="conces.user" #user="ngModel" user required />
+    <div *ngIf = 'user.invalid && (user.dirty || user.touched)' >   el usuario es requerido </div>
+
     <br>
 
     <!-- [disabled]="!consecionariaForm.form.valid" -->

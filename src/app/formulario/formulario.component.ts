@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { consecionaria } from '../modelos/consecionaria';
+//import { consecionaria } from '../modelos/concesionaria';
+import { ConcesionariaService } from '../servicios/concesionaria.service';
+import { concesionaria } from '../modelos/concesionaria';
 
 @Component({
   selector: 'app-formulario',
@@ -12,12 +14,12 @@ export class FormularioComponent implements OnInit {
 //  email:string;
  // password:string;
 
- consec: consecionaria;
+ conces: concesionaria;
 
 
-  constructor() 
+  constructor(private _concesServ : ConcesionariaService) 
   {
-      this.consec = new consecionaria("", "");
+      this.conces = new concesionaria("", "","","","","");
    }
 
 
@@ -27,7 +29,11 @@ export class FormularioComponent implements OnInit {
 
   validar() {
     //console.log("hola");
-    console.log(this.consec.email  + " " + this.consec.clave);
+    console.log(this.conces.email  + " " + this.conces.pass);
+
+    this._concesServ.post(this.conces)
+    .subscribe(token => { console.log("token desde login"+token) });
+    
 
   }
 

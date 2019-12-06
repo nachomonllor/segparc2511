@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { cliente } from './modelos/cliente';
+//import { cliente } from './modelos/cliente';
 import { Observable } from 'rxjs';
 //import {HttpClient}
 import { map} from 'rxjs/operators';
 import { tokenName } from '@angular/compiler';
+import { cliente } from '../modelos/cliente';
 
 @Injectable({
   providedIn: 'root'
