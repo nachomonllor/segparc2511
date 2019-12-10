@@ -9,6 +9,7 @@ import { Tipo } from '../modelos/tipo';
 })
 export class FormcargaVehiculoComponent implements OnInit {
 
+ 
   vehi:vehiculo;
   //tipo:Tipo;
   constructor() {
@@ -20,6 +21,11 @@ export class FormcargaVehiculoComponent implements OnInit {
   
   validar() {
      console.log(this.vehi);
+
+        //--------------------
+     localStorage.setItem('vehiculo', JSON.stringify(this.vehi));
+
+
   }
 
 

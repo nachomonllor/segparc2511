@@ -1,0 +1,21 @@
+
+<!--
+   marca:string; 
+   modelo:string; 
+   an:string; 
+   kilometros:number;
+   tipo:Tipo;
+   foto:string 
+-->
+<h2>Estadistica vehiculos</h2>
+<ul>    
+    <li *ngFor ="let item of vehi">
+        {{item.marca}}
+        {{item.modelo}}
+        {{item.an}}
+        {{item.kilometros}}
+        {{item.tipo}} 
+        <!-- {{item.foto}}-->
+
+    </li>
+</ul>

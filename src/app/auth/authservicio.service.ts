@@ -37,8 +37,15 @@ export class AuthservicioService {
          //aca guardamos en el local storage
 
           let tokenSinComillas = token.token;
+          /*
+          //esto no saca las comillas, saca el primer y ultimo caracter
+          tokenSinComillas = tokenSinComillas.substring(1, tokenSinComillas.length - 2);
+          console.log(token.token);
+          console.log('\n');
+          console.log( tokenSinComillas);
           //Hacer algo con el string tokenSinComillas
           console.log(tokenSinComillas);
+          */
          localStorage.setItem('token', JSON.stringify(tokenSinComillas));
             
          this.isLoggedIn = true;

@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { FormcargaVehiculoComponent } from './formcarga-vehiculo/formcarga-vehiculo.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { FormMostrarComponent } from './form-mostrar/form-mostrar.component';
 
 
 @NgModule({
@@ -17,7 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
     FormularioComponent,
     LoginComponent,
     
-    FormcargaVehiculoComponent
+    FormcargaVehiculoComponent,
+    
+    FormMostrarComponent
 
   ],
   imports: [
