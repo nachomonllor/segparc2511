@@ -11,9 +11,13 @@ export class FormcargaVehiculoComponent implements OnInit {
 
  
   vehi:vehiculo;
+
+ // lista:Array<vehiculo>;
   //tipo:Tipo;
   constructor() {
+     //this.lista = new Array<vehiculo>();
      this.vehi = new vehiculo("","","",0, Tipo.vacio  ,"");
+
    }
 
   ngOnInit() {
@@ -21,13 +25,14 @@ export class FormcargaVehiculoComponent implements OnInit {
   
   validar() {
      console.log(this.vehi);
-
-        //--------------------
-     localStorage.setItem('vehiculo', JSON.stringify(this.vehi));
+    // this.lista.push(this.vehi);
+    //--------------------
+    // localStorage.setItem('vehiculo', JSON.stringify(this.lista));
+     //localStorage.setItem('vehiculo', JSON.stringify(this.vehi));
 
 
   }
-
+   
 
 
 }

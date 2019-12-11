@@ -52,7 +52,7 @@ export class AuthservicioService {
          return true;
          //console.log("token desde el service" + token.token);
       }
-      this.isLoggedIn = false;
+      //this.isLoggedIn = false;
       return false;
    //.pipe(map((response) => token.json()))
 
@@ -70,18 +70,19 @@ logout(): void {
 //Vamos a tener que usar este metodo para inyectar
 //el token en las cabeceras
 devolverToken(){
-  localStorage.setItem('token', null);
+  return JSON.parse(localStorage.getItem('token'));
+ 
 }
 
 borrarToken(){
-  return JSON.parse(localStorage.getItem('token'));
+  localStorage.setItem('token', null);
 }
 
 
 
  estaAutorizado() :boolean{
   this.token = JSON.parse(localStorage.getItem('token'));
-   if(this.token != null &&  this.isLoggedIn ){
+   if(this.token != null){
         return true;
    } else{
      return false;
