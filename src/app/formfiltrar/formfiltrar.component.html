@@ -1,0 +1,20 @@
+
+<select  [(ngModel)]= 'selectedValue' (change)="onChange($event)" >
+    <option *ngFor="let t of tipos" [ngValue]="t">{{t}}</option>
+  </select>
+  <br>
+  
+  {{selectedValue + " " +  mostrar}}
+
+  <!-- {{mostrar}} -->
+  <ul>
+      <li *ngFor ="let item of listaFiltradoTipo">
+          {{item.marca}}
+          {{item.modelo}}
+          {{item.an}}
+          {{item.kilometros}}
+          {{item.tipo}} 
+          {{item.localidad}}
+          {{item.concesionaria}}
+      </li>
+  </ul>

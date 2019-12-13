@@ -10,6 +10,9 @@ import { FormcargaVehiculoComponent } from './formcarga-vehiculo/formcarga-vehic
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormMostrarComponent } from './form-mostrar/form-mostrar.component';
+//import {MatSelectModule} from '@angular/material/select';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormfiltrarComponent } from './formfiltrar/formfiltrar.component';
 
 
 @NgModule({
@@ -20,7 +23,11 @@ import { FormMostrarComponent } from './form-mostrar/form-mostrar.component';
     
     FormcargaVehiculoComponent,
     
-    FormMostrarComponent
+    FormMostrarComponent,
+    
+    FormfiltrarComponent,
+
+  //  MatSelectModule
 
   ],
   imports: [
@@ -28,6 +35,7 @@ import { FormMostrarComponent } from './form-mostrar/form-mostrar.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     
 
   ],

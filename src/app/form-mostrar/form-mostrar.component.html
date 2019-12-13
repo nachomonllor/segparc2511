@@ -9,13 +9,43 @@
 -->
 <h2>Estadistica vehiculos</h2>
 <ul>    
+     
     <li *ngFor ="let item of autos">
         {{item.marca}}
         {{item.modelo}}
         {{item.an}}
         {{item.kilometros}}
         {{item.tipo}} 
+        {{item.localidad}}
+        {{item.concesionaria}}
         <!-- {{item.foto}}-->
+    </li>
 
+
+</ul>
+
+<br>
+<br>
+<!--
+<select  [(ngModel)]= 'selectedValue' (change)="filtrarTipo($event)" >
+  <option *ngFor="let t of tipos" [ngValue]="t">{{t}}</option>
+</select>
+<br>
+<br>
+
+{{selectedValue }}
+<ul>
+    <li *ngFor ="let item of listaFiltradoTipo">
+        {{item.marca}}
+        {{item.modelo}}
+        {{item.an}}
+        {{item.kilometros}}
+        {{item.tipo}} 
+        {{item.localidad}}
+        {{item.concesionaria}}
     </li>
 </ul>
+-->
+
+
+
