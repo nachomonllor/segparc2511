@@ -10,12 +10,16 @@ import { FormfiltrarComponent } from './formfiltrar/formfiltrar.component';
 
 const routes: Routes = 
 [
+  
   {path: '', component: LoginComponent},
   {path: 'login', component: LoginComponent},
   {path: 'formulario', component:FormularioComponent , canActivate: [AuthGuard] },
   {path: 'cargaVehiculo', component:FormcargaVehiculoComponent , canActivate: [AuthGuard] },
   {path: 'mostrarVehiculos', component:FormMostrarComponent , canActivate: [AuthGuard] },
   {path: 'filtrarVehiculos', component:FormfiltrarComponent }
+
+
+
 
 ];
 
