@@ -1,4 +1,4 @@
-import { Tipo } from './tipo';
+//import { Tipo } from './tipo';
 
 
 export class vehiculo {
@@ -6,10 +6,10 @@ export class vehiculo {
     modelo:string; 
     an:string; 
     kilometros:number;
-    tipo:Tipo;
+    tipo:string;
     foto:string 
 
-    constructor(marca:string, modelo:string, an:string, kilometros:number, tipo:Tipo, foto:string) {
+    constructor(marca:string, modelo:string, an:string, kilometros:number, tipo:string, foto:string) {
         this.marca = marca;
         this.modelo = modelo;
         this.an = an;

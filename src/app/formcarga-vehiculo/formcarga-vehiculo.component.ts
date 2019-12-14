@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { vehiculo } from '../modelos/vehiculo';
-import { Tipo } from '../modelos/tipo';
+//import { Tipo } from '../modelos/tipo';
 
 @Component({
   selector: 'app-formcarga-vehiculo',
@@ -16,7 +16,7 @@ export class FormcargaVehiculoComponent implements OnInit {
   //tipo:Tipo;
   constructor() {
      //this.lista = new Array<vehiculo>();
-     this.vehi = new vehiculo("","","",0, Tipo.vacio  ,"");
+     this.vehi = new vehiculo("","","",0, "auto"  ,"");
 
    }
 

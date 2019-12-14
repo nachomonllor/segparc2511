@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { vehiculo } from '../modelos/vehiculo';
 import { TraerautosService } from '../servicios/traerautos.service';
 import { auto } from '../modelos/auto';
-import { Tipo } from '../modelos/tipo';
+//import { Tipo } from '../modelos/tipo';
 
 @Component({
   selector: 'app-form-mostrar',
@@ -26,7 +26,7 @@ export class FormMostrarComponent implements OnInit {
   constructor(private ts: TraerautosService) {
     
     //this.vehi.push (JSON.parse(localStorage.getItem('vehiculo')));
-     this.vehi = new vehiculo("","","",0, Tipo.vacio ,"");  
+     this.vehi = new vehiculo("","","",0, "auto" ,"");  
      this.autos = new Array<auto>();
 
      //this.tipos.push("Auto");
@@ -57,23 +57,7 @@ export class FormMostrarComponent implements OnInit {
       return aux;
    }
 
-   //mostrar = "";
-
-   /*
-   filtrarTipo() {
-      //this.traerdatos();
-       for(let i =0; i<this.autos.length; i++) {
-            if(this.selectedValue == this.autos[i].tipo ){
-                this.listaFiltradoTipo.push(this.autos[i]);
-            }
-       }
-       for(let i =0; i<this.listaFiltradoTipo.length; i++) {
-           console.log(this.listaFiltradoTipo[i].modelo);
-           console.log(this.listaFiltradoTipo[i].an);
-       }
-
-   }*/
-
-
+   
+   
 
 }

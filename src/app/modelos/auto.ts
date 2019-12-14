@@ -1,4 +1,4 @@
-import { Tipo } from './tipo';
+//import { Tipo } from './tipo';
 
 export class auto {
     marca:string;
@@ -6,7 +6,7 @@ export class auto {
 
     an:string; 
     kilometros:number;
-    tipo:Tipo;
+    tipo:string;
     foto:string;
     
     localidad:string;
@@ -19,7 +19,7 @@ export class auto {
         this.modelo = _modelo;
     }*/
 
-    constructor(_marca:string, _modelo:string, _an:string, _kilometros:number, _tipo:Tipo, _foto:string, _localidad:string, _concesionaria:string) {
+    constructor(_marca:string, _modelo:string, _an:string, _kilometros:number, _tipo:string, _foto:string, _localidad:string, _concesionaria:string) {
         this.marca = _marca;
         this.modelo = _modelo;
         this.an = _an;

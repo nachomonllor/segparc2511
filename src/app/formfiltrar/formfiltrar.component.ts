@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { auto } from '../modelos/auto';
-import { Tipo } from '../modelos/tipo';
+//import { Tipo } from '../modelos/tipo';
 import { TraerautosService } from '../servicios/traerautos.service';
 import { async } from '@angular/core/testing';
 
@@ -12,14 +12,15 @@ import { async } from '@angular/core/testing';
 export class FormfiltrarComponent implements OnInit {
   tipos = new Array<string>();
   localidades = new Array<string>();
+  concesionarias = new Array<string>();
 
   listaOriginal:Array<auto>;//esta es la original
-  tipoSeleccionado = Tipo.vacio;
+  tipoSeleccionado = "auto";
   localidadSeleccionada = "avellaneda";
-
-  autos: Array<auto>; //esta filtramos
+  concesionariaSeleccionada = "concesionaria tito";
   
-   mostrar = "";
+  autos: Array<auto>; //esta filtramos
+  mostrar = "";
 
   // tipos = new Array<string>();
 
@@ -43,6 +44,14 @@ export class FormfiltrarComponent implements OnInit {
      this.localidades.push("wilde") ;
      this.localidades.push("sarandi") ;
 
+     this.concesionarias.push("concesionaria tito"); 
+     this.concesionarias.push("concesionaria clio"); 
+     this.concesionarias.push("concesionaria peugeot"); 
+     this.concesionarias.push("concesionaria yamaha"); 
+     this.concesionarias.push("concesionaria camion"); 
+     this.concesionarias.push("concesionaria camioneta");
+
+
 
      this.listaOriginal = new Array<auto>();
 
@@ -56,24 +65,10 @@ export class FormfiltrarComponent implements OnInit {
    }
 
    ngOnInit() {
-
     this.traerdatos();//Se eejcuta y pueden x segundos
-    
-/*     console.log("entro al ngOnInit");
-    //NO ENTRA A ESTE FOR PORQUE SI AUTOS.LENGTH FUERA CERO
-    console.log("len : " + this.autos.length);
-    for(let i =0; i<this.autos.length; i++) {
-      console.log("entro al for"); 
-     if(this.selectedValue == this.autos[i].tipo ){
-
-          this.listaFiltradoTipo.push(this.autos[i]);
-      }
- } */
-
-
-  }
+   }
    
-  traerdatos() {
+   traerdatos() {
     //let aux = new Array<auto>();
      this.ts.getautos().subscribe(_autos =>  {
 
@@ -123,5 +118,21 @@ export class FormfiltrarComponent implements OnInit {
       }
     }
 
+
+    filtrarPorConcesionaria() {
+      //console.log("len: "  + this.autos.length);
+      this.autos = new Array<auto>();
+        console.log(this.localidadSeleccionada);
+
+        //this.autos= this.listaOriginal.filter(item => item.tipo==this.selectedValue); 
+
+        console.log(this.autos);
+
+          for(let i =0; i<this.listaOriginal.length; i++) {
+          if(this.concesionariaSeleccionada == this.listaOriginal[i].concesionaria ){
+            this.autos.push(this.listaOriginal[i]);
+          }
+      }
+    }
 
 }
