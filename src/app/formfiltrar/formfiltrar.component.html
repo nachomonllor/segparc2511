@@ -1,6 +1,10 @@
 
-<table>
+<div>  
+  <input type="button" value="descargar PDF" (click)="captureScreen()"/>  
+  <input type="button" value="cargar vehiculo" (click)="cargarVehiculo()"/>  
+</div> 
 
+<table>
 <td>
 Filtrado por tipo:
 <br>
@@ -42,7 +46,7 @@ Filtrado por tipo:
     </tr>
   </thead>
 
-  
+
     <tbody>
     <tr *ngFor ="let item of autos">
         <th scope="row" > {{item.marca}} </th>
@@ -58,9 +62,6 @@ Filtrado por tipo:
 </ul>
 <br>
 
-<div>  
-  <input type="button" value="descargar PDF" (click)="captureScreen()"/>  
-</div> 
 
 
 

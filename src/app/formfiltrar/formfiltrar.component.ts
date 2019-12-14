@@ -7,6 +7,7 @@ import { async } from '@angular/core/testing';
 import { Component, OnInit, ElementRef ,ViewChild} from '@angular/core';  
 import * as jspdf from 'jspdf';  
 import html2canvas from 'html2canvas'; 
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formfiltrar',
@@ -35,7 +36,7 @@ export class FormfiltrarComponent implements OnInit {
   
   //selectedValue = "vacio";
   //selectedValue = Tipo.vacio;
-  constructor(private ts: TraerautosService) {
+  constructor(private ts: TraerautosService, private router: Router ) {
     
     //this.vehi.push (JSON.parse(localStorage.getItem('vehiculo')));
      //this.vehi = new vehiculo("","","",0, Tipo.vacio ,"");  
@@ -162,7 +163,9 @@ export class FormfiltrarComponent implements OnInit {
       });  
     } 
 
-
+    cargarVehiculo() {
+      this.router.navigate(['/cargaVehiculo']);
+    }
 
 
 }
