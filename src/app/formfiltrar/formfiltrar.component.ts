@@ -25,6 +25,9 @@ export class FormfiltrarComponent implements OnInit {
   
   autos: Array<auto>; //esta filtramos
   mostrar = "";
+  
+  headElements = [ 'marca', 'modelo', 'año',
+    'kilometros', 'tipo' , 'localidad', 'concesionaria'  ] ;
 
   // tipos = new Array<string>();
 
@@ -55,7 +58,7 @@ export class FormfiltrarComponent implements OnInit {
      this.concesionarias.push("concesionaria camion"); 
      this.concesionarias.push("concesionaria camioneta");
 
-
+     
 
      this.listaOriginal = new Array<auto>();
 
@@ -63,7 +66,7 @@ export class FormfiltrarComponent implements OnInit {
     
      //this.traerdatos();
      
-
+      
     
     
    }

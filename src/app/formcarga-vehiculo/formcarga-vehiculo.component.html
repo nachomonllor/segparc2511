@@ -1,37 +1,64 @@
+<h2>Cargar Vehiculo:</h2>
+<br>
 <form #formcargaVehiculo = "ngForm">
     Marca:
-    <input type = "marca" name = "marca" [(ngModel)] = "vehi.marca" #marca = "ngModel" marca required/>
-        <div *ngIf = 'marca.invalid && (marca.dirty || marca.touched)' >
-            la marca es requerida
-        </div>
-    
+    <br>
+    <!--
+     <input type = "marca" name = "marca" [(ngModel)] = "vehi.marca" #marca = "ngModel" marca required/>
+    -->
+
+    <select class="browser-default custom-select" [(ngModel)]= 'marcaSeleccionada' name = "marca"  >
+        <option *ngFor="let m of marcas" [ngValue]="m">{{m}}</option>
+    </select>
+
         <br>
     Modelo:
+    <br>
+    
+    <!--
     <input type = "modelo" name = "modelo" [(ngModel)] = "vehi.modelo" #modelo = "ngModel" marca required/>
         <div *ngIf = 'modelo.invalid && (modelo.dirty ||modelo.touched)' >
             el modelo es requerido
         </div>
-    
+    -->
+
+     
+    <select class="browser-default custom-select" [(ngModel)]= 'modeloSeleccionado'  name ="modelo" >
+        <option *ngFor="let m of modelos" [ngValue]="m">{{m}}</option>
+    </select>
+     
+
      <br>
 
      Año:
+     <br>
+     <!--
      <input type = "an" name = "an" [(ngModel)] = "vehi.an" #an = "ngModel" />
-       
+     -->
+     
+     <select class="browser-default custom-select" [(ngModel)]= 'anSeleccionado'  name ="an" >
+        <option *ngFor="let a of anios" [ngValue]="a">{{a}}</option>
+      </select>
+    
+
       <br>
 
       Kilometros:
+      <br>
       <input type = "kilometros" name = "kilometros" [(ngModel)] = "vehi.kilometros" #kilometros = "ngModel" />
         
        <br>
 
        Tipo: 
-       <select name = "selecttipo" class="form-control" id="exampleFormControlSelect1" required [(ngModel)] = "vehi.tipo">
+       <br>
+       <select name = "selecttipo" class="form-control" id="exampleFormControlSelect1" required [(ngModel)] = "vehi.tipo" >
             <option>auto</option>
             <option>camioneta</option>
             <option>camion</option>
         </select>
 
         Foto:
+        <br>
         <input type = "foto" name = "foto" [(ngModel)] = "vehi.foto" #kilometros = "ngModel" />
           
          <br>
