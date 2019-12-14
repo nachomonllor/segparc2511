@@ -14,6 +14,20 @@ import { FormMostrarComponent } from './form-mostrar/form-mostrar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormfiltrarComponent } from './formfiltrar/formfiltrar.component';
 import { DetallevehiculoComponent } from './detallevehiculo/detallevehiculo.component';
+import { ConversorpdfComponent } from './conversorpdf/conversorpdf.component';
+
+
+import {
+  MatButtonModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatCardModule,
+  MatTableModule
+} from "@angular/material";
 
 
 @NgModule({
@@ -29,16 +43,33 @@ import { DetallevehiculoComponent } from './detallevehiculo/detallevehiculo.comp
     FormfiltrarComponent,
     
     DetallevehiculoComponent,
+    
+    ConversorpdfComponent,
 
   //  MatSelectModule
 
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
+   // BrowserModule,
+    //AppRoutingModule,
     FormsModule,
-    HttpClientModule,
+    //HttpClientModule,
+    //BrowserAnimationsModule,
+
+
+    BrowserModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatListModule,
+    MatInputModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatCardModule,
+    MatTableModule
     
 
   ],

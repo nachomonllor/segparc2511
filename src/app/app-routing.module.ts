@@ -16,7 +16,7 @@ const routes: Routes =
   {path: 'formulario', component:FormularioComponent , canActivate: [AuthGuard] },
   {path: 'cargaVehiculo', component:FormcargaVehiculoComponent , canActivate: [AuthGuard] },
   {path: 'mostrarVehiculos', component:FormMostrarComponent , canActivate: [AuthGuard] },
-  {path: 'filtrarVehiculos', component:FormfiltrarComponent }
+  {path: 'filtrarVehiculos', component:FormfiltrarComponent , canActivate: [AuthGuard]}
 
 
 

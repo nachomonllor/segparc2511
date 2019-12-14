@@ -41,7 +41,7 @@ Filtrado por tipo:
   <h2>Estadistica vehiculos</h2>
 <ul>    
      
-<table>
+<table id="contentToConvert" >
     <!--
     <thead>
         <tr>
@@ -61,7 +61,11 @@ Filtrado por tipo:
         <!-- {{item.foto}}-->
     </tbody>
 </table>
-
 </ul>
-
 <br>
+
+<div>  
+  <input type="button" value="descargar PDF" (click)="captureScreen()"/>  
+</div> 
+
+

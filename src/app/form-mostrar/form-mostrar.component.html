@@ -10,7 +10,7 @@
 <h2>Estadistica vehiculos</h2>
 <ul>    
      
-<table>
+<table id="contentToConvert" >
     <!--
     <thead>
         <tr>
@@ -35,26 +35,10 @@
 
 <br>
 <br>
-<!--
-<select  [(ngModel)]= 'selectedValue' (change)="filtrarTipo($event)" >
-  <option *ngFor="let t of tipos" [ngValue]="t">{{t}}</option>
-</select>
-<br>
-<br>
 
-{{selectedValue }}
-<ul>
-    <li *ngFor ="let item of listaFiltradoTipo">
-        {{item.marca}}
-        {{item.modelo}}
-        {{item.an}}
-        {{item.kilometros}}
-        {{item.tipo}} 
-        {{item.localidad}}
-        {{item.concesionaria}}
-    </li>
-</ul>
--->
+<div>  
+  <input type="button" value="descargar PDF" (click)="captureScreen()"/>  
+</div> 
 
 
 
