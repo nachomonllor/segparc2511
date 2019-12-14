@@ -51,16 +51,33 @@
 
        Tipo: 
        <br>
+       <!--
        <select name = "selecttipo" class="form-control" id="exampleFormControlSelect1" required [(ngModel)] = "vehi.tipo" >
             <option>auto</option>
             <option>camioneta</option>
             <option>camion</option>
         </select>
+        -->
+        <select class="browser-default custom-select" [(ngModel)]= 'tipoSeleccionado'  name ="tipo" >
+            <option *ngFor="let t of tipos" [ngValue]="t">{{t}}</option>
+        </select>
+        <br>
+
+        Localidad:
+        <select class="browser-default custom-select" [(ngModel)]= 'localidadSeleccionada'  name ="localidad" >
+            <option *ngFor="let l of localidades" [ngValue]="l">{{l}}</option>
+        </select>
+        <br>
+
+        Concesionaria:
+        <select class="browser-default custom-select" [(ngModel)]= 'concesionariaSeleccionada'  name ="concesionaria" >
+            <option *ngFor="let c of concesionarias" [ngValue]="c">{{c}}</option>
+        </select>
+        <br>
 
         Foto:
         <br>
         <input type = "foto" name = "foto" [(ngModel)] = "vehi.foto" #kilometros = "ngModel" />
-          
          <br>
 
     <br>

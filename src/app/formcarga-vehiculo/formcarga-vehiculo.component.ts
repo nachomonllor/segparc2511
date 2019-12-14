@@ -16,9 +16,15 @@ export class FormcargaVehiculoComponent implements OnInit {
 
   marcas: Array<string>;
   marcaSeleccionada= "";
-  
+
   modelos: Array<string>;
   modeloSeleccionado = "";
+
+  tipos = new Array<string>();
+
+  localidades = new Array<string>();
+
+  concesionarias = new Array<string>();
  // lista:Array<vehiculo>;
   //tipo:Tipo;
   constructor() {
@@ -48,6 +54,24 @@ export class FormcargaVehiculoComponent implements OnInit {
      for(let i =0; i<modelosaux.length; i++) {
        this.modelos.push(modelosaux[i]);
      }
+
+     this.tipos.push("auto");
+     this.tipos.push("camioneta");
+     this.tipos.push("camion");
+     
+     this.localidades.push("avellaneda") ;
+     this.localidades.push("ezpeleta") ;
+     this.localidades.push("quilmes") ;
+     this.localidades.push("wilde") ;
+     this.localidades.push("sarandi") ;
+
+
+     this.concesionarias.push("concesionaria clio");
+     this.concesionarias.push("concesionaria ford");
+     this.concesionarias.push("concesionaria auto");
+     this.concesionarias.push("concesionaria camion");
+     this.concesionarias.push("concesionaria camioneta");
+     this.concesionarias.push("concesionaria BMW");
 
 
    }
