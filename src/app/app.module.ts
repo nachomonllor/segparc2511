@@ -16,6 +16,7 @@ import { FormfiltrarComponent } from './formfiltrar/formfiltrar.component';
 import { DetallevehiculoComponent } from './detallevehiculo/detallevehiculo.component';
 import { ConversorpdfComponent } from './conversorpdf/conversorpdf.component';
 
+import { WavesModule, TableModule } from 'angular-bootstrap-md';
 
 import {
   MatButtonModule,
@@ -69,7 +70,8 @@ import {
     MatSelectModule,
     MatSidenavModule,
     MatCardModule,
-    MatTableModule
+    MatTableModule,
+    WavesModule, TableModule
     
 
   ],
