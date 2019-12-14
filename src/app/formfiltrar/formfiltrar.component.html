@@ -1,10 +1,16 @@
 
-<select  [(ngModel)]= 'selectedValue' (change)="onChange($event)" >
+<select  [(ngModel)]= 'tipoSeleccionado' (change)="filtrarPorTipo($event)" >
     <option *ngFor="let t of tipos" [ngValue]="t">{{t}}</option>
   </select>
   <br>
+
+  <select  [(ngModel)]= 'localidadSeleccionada' (change)="filtrarPorLocalidad($event)" >
+    <option *ngFor="let l of localidades" [ngValue]="l">{{l}}</option>
+  </select>
+  <br>
+
   
-  {{selectedValue + " " +  mostrar}}
+ <!-- {{selectedValue + " " +  mostrar}} -->
 
   <!-- {{mostrar}} -->
   <ul>

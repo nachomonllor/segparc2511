@@ -11,8 +11,12 @@ import { async } from '@angular/core/testing';
 })
 export class FormfiltrarComponent implements OnInit {
   tipos = new Array<string>();
+  localidades = new Array<string>();
+
   listaOriginal:Array<auto>;//esta es la original
-  selectedValue = Tipo.vacio;
+  tipoSeleccionado = Tipo.vacio;
+  localidadSeleccionada = "avellaneda";
+
   autos: Array<auto>; //esta filtramos
   
    mostrar = "";
@@ -32,6 +36,13 @@ export class FormfiltrarComponent implements OnInit {
      this.tipos.push("auto");
      this.tipos.push("camioneta");
      this.tipos.push("camion");
+
+     this.localidades.push("avellaneda") ;
+     this.localidades.push("ezpeleta") ;
+     this.localidades.push("quilmes") ;
+     this.localidades.push("wilde") ;
+     this.localidades.push("sarandi") ;
+
 
      this.listaOriginal = new Array<auto>();
 
@@ -77,37 +88,40 @@ export class FormfiltrarComponent implements OnInit {
 }
 
 
-    onChange() {
-    // this.autos =  await this.traerdatos(); //peticion asincronica
-     console.log("len: "  + this.autos.length);
-     this.autos = new Array<auto>();
-       console.log(this.selectedValue);
+    filtrarPorTipo() {
+      // this.autos =  await this.traerdatos(); //peticion asincronica
+      console.log("len: "  + this.autos.length);
+      this.autos = new Array<auto>();
+        console.log(this.tipoSeleccionado);
 
-       //this.autos= this.listaOriginal.filter(item => item.tipo==this.selectedValue); 
+        //this.autos= this.listaOriginal.filter(item => item.tipo==this.selectedValue); 
 
-       console.log(this.autos);
+        console.log(this.autos);
 
-        for(let i =0; i<this.listaOriginal.length; i++) {
-        if(this.selectedValue == this.listaOriginal[i].tipo ){
-           this.autos.push(this.listaOriginal[i]);
-        }
-   }
-
-    //this.traerdatos();
-  /*    for(let i =0; i<this.autos.length; i++) {
-          if(this.selectedValue == this.autos[i].tipo ){
-              this.listaFiltradoTipo.push(this.autos[i]);
+          for(let i =0; i<this.listaOriginal.length; i++) {
+          if(this.tipoSeleccionado == this.listaOriginal[i].tipo ){
+            this.autos.push(this.listaOriginal[i]);
           }
-     }
-     for(let i =0; i<this.listaFiltradoTipo.length; i++) {
-         console.log(this.listaFiltradoTipo[i].modelo);
-         console.log(this.listaFiltradoTipo[i].an);
+      }
 
-         this.mostrar += this.listaFiltradoTipo[i].modelo
-                      +""+ this.listaFiltradoTipo[i].an;
-     } */
 
- }
+    }
+
+    filtrarPorLocalidad() {
+      //console.log("len: "  + this.autos.length);
+      this.autos = new Array<auto>();
+        console.log(this.localidadSeleccionada);
+
+        //this.autos= this.listaOriginal.filter(item => item.tipo==this.selectedValue); 
+
+        console.log(this.autos);
+
+          for(let i =0; i<this.listaOriginal.length; i++) {
+          if(this.localidadSeleccionada == this.listaOriginal[i].localidad ){
+            this.autos.push(this.listaOriginal[i]);
+          }
+      }
+    }
 
 
 }

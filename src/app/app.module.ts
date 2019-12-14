@@ -13,6 +13,7 @@ import { FormMostrarComponent } from './form-mostrar/form-mostrar.component';
 //import {MatSelectModule} from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormfiltrarComponent } from './formfiltrar/formfiltrar.component';
+import { DetallevehiculoComponent } from './detallevehiculo/detallevehiculo.component';
 
 
 @NgModule({
@@ -26,6 +27,8 @@ import { FormfiltrarComponent } from './formfiltrar/formfiltrar.component';
     FormMostrarComponent,
     
     FormfiltrarComponent,
+    
+    DetallevehiculoComponent,
 
   //  MatSelectModule
 
