@@ -4,35 +4,29 @@
 
 Filtrado por tipo:
 <br>
-<select  [(ngModel)]= 'tipoSeleccionado' (change)="filtrarPorTipo($event)" >
+<select class="browser-default custom-select" [(ngModel)]= 'tipoSeleccionado' (change)="filtrarPorTipo($event)" >
     <option *ngFor="let t of tipos" [ngValue]="t">{{t}}</option>
   </select>
-  <br>
-  <br>
-
-
 </td>
 <td>
 
   Filtrado por localidad: 
   <br>
-  <select  [(ngModel)]= 'localidadSeleccionada' (change)="filtrarPorLocalidad($event)" >
+  <select class="browser-default custom-select" [(ngModel)]= 'localidadSeleccionada' (change)="filtrarPorLocalidad($event)" >
     <option *ngFor="let l of localidades" [ngValue]="l">{{l}}</option>
   </select>
-  <br>
-  <br>
-
 </td>
 <td>
 
   Filtrado por concesionaria:
   <br>
-  <select  [(ngModel)]= 'concesionariaSeleccionada' (change)="filtrarPorConcesionaria($event)" >
+  <select class="browser-default custom-select" [(ngModel)]= 'concesionariaSeleccionada' (change)="filtrarPorConcesionaria($event)" >
     <option *ngFor="let c of concesionarias" [ngValue]="c">{{c}}</option>
   </select>
-  <br>
+  
   
 </td>
+<br>
 </table>
   
  <!-- {{selectedValue + " " +  mostrar}} -->
