@@ -17,6 +17,10 @@ export class FormMostrarComponent implements OnInit {
 
   autos: Array<auto>;
   
+
+  headElements = ['marca', 'modelo', 'año',
+    'kilometros', 'tipo', 'foto'];
+
   // tipos = new Array<string>();
 
   //listaFiltradoTipo:Array<auto>;

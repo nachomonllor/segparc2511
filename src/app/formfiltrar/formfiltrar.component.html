@@ -1,4 +1,7 @@
 
+<table>
+<td>
+
 Filtrado por tipo:
 <br>
 <select  [(ngModel)]= 'tipoSeleccionado' (change)="filtrarPorTipo($event)" >
@@ -6,6 +9,10 @@ Filtrado por tipo:
   </select>
   <br>
   <br>
+
+
+</td>
+<td>
 
   Filtrado por localidad: 
   <br>
@@ -15,6 +22,9 @@ Filtrado por tipo:
   <br>
   <br>
 
+</td>
+<td>
+
   Filtrado por concesionaria:
   <br>
   <select  [(ngModel)]= 'concesionariaSeleccionada' (change)="filtrarPorConcesionaria($event)" >
@@ -22,17 +32,36 @@ Filtrado por tipo:
   </select>
   <br>
   
+</td>
+</table>
+  
  <!-- {{selectedValue + " " +  mostrar}} -->
 
   <!-- {{mostrar}} -->
-  <ul>
-      <li *ngFor ="let item of autos">
-          {{item.marca}}
-          {{item.modelo}}
-          {{item.an}}
-          {{item.kilometros}}
-          {{item.tipo}} 
-          {{item.localidad}}
-          {{item.concesionaria}}
-      </li>
-  </ul>
+  <h2>Estadistica vehiculos</h2>
+<ul>    
+     
+<table>
+    <!--
+    <thead>
+        <tr>
+          <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+        </tr>
+      </thead>
+    -->
+    <tbody>
+    <tr *ngFor ="let item of autos">
+        <th scope="row" > {{item.marca}} </th>
+        <td> {{item.modelo}}</td>
+        <td> {{item.an}}</td>
+        <td> {{item.kilometros}}</td>
+        <td> {{item.tipo}} </td>
+        <td> {{item.localidad}}</td>
+        <td>  {{item.concesionaria}}</td>
+        <!-- {{item.foto}}-->
+    </tbody>
+</table>
+
+</ul>
+
+<br>

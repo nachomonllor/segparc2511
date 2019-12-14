@@ -10,17 +10,26 @@
 <h2>Estadistica vehiculos</h2>
 <ul>    
      
-    <li *ngFor ="let item of autos">
-        {{item.marca}}
-        {{item.modelo}}
-        {{item.an}}
-        {{item.kilometros}}
-        {{item.tipo}} 
-        {{item.localidad}}
-        {{item.concesionaria}}
+<table>
+    <!--
+    <thead>
+        <tr>
+          <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+        </tr>
+      </thead>
+    -->
+    <tbody>
+    <tr *ngFor ="let item of autos">
+        <th scope="row" > {{item.marca}} </th>
+        <td> {{item.modelo}}</td>
+        <td> {{item.an}}</td>
+        <td> {{item.kilometros}}</td>
+        <td> {{item.tipo}} </td>
+        <td> {{item.localidad}}</td>
+        <td>  {{item.concesionaria}}</td>
         <!-- {{item.foto}}-->
-    </li>
-
+    </tbody>
+</table>
 
 </ul>
 
