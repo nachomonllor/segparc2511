@@ -7,7 +7,7 @@
      <input type = "marca" name = "marca" [(ngModel)] = "vehi.marca" #marca = "ngModel" marca required/>
     -->
 
-    <select class="browser-default custom-select" [(ngModel)]= 'marcaSeleccionada' name = "marca"  >
+    <select class="browser-default custom-select" [(ngModel)]= 'marca' name = "marca"  >
         <option *ngFor="let m of marcas" [ngValue]="m">{{m}}</option>
     </select>
 
@@ -23,7 +23,7 @@
     -->
 
      
-    <select class="browser-default custom-select" [(ngModel)]= 'modeloSeleccionado'  name ="modelo" >
+    <select class="browser-default custom-select" [(ngModel)]= 'modelo'   name ="modelo" >
         <option *ngFor="let m of modelos" [ngValue]="m">{{m}}</option>
     </select>
      
@@ -36,7 +36,7 @@
      <input type = "an" name = "an" [(ngModel)] = "vehi.an" #an = "ngModel" />
      -->
      
-     <select class="browser-default custom-select" [(ngModel)]= 'anSeleccionado'  name ="an" >
+     <select class="browser-default custom-select" [(ngModel)]= 'an'   name ="an" >
         <option *ngFor="let a of anios" [ngValue]="a">{{a}}</option>
       </select>
     
@@ -45,8 +45,9 @@
 
       Kilometros:
       <br>
-      <input type = "kilometros" name = "kilometros" [(ngModel)] = "vehi.kilometros" #kilometros = "ngModel" />
-        
+      <!--
+      <input type = "text" name = "kilometros" [(ngModel)] = "vehi.kilometros" #kilometros = "ngModel" />
+      -->
        <br>
 
        Tipo: 
@@ -58,32 +59,44 @@
             <option>camion</option>
         </select>
         -->
-        <select class="browser-default custom-select" [(ngModel)]= 'tipoSeleccionado'  name ="tipo" >
+        <select class="browser-default custom-select" [(ngModel)]= 'tipo'   name ="tipo" >
             <option *ngFor="let t of tipos" [ngValue]="t">{{t}}</option>
         </select>
         <br>
 
         Localidad:
-        <select class="browser-default custom-select" [(ngModel)]= 'localidadSeleccionada'  name ="localidad" >
+        <select class="browser-default custom-select" [(ngModel)]= 'localidad'   name ="localidad" >
             <option *ngFor="let l of localidades" [ngValue]="l">{{l}}</option>
         </select>
         <br>
 
         Concesionaria:
-        <select class="browser-default custom-select" [(ngModel)]= 'concesionariaSeleccionada'  name ="concesionaria" >
+        <select class="browser-default custom-select" [(ngModel)]= 'concesionaria'   name ="concesionaria" >
             <option *ngFor="let c of concesionarias" [ngValue]="c">{{c}}</option>
         </select>
         <br>
 
         Foto:
         <br>
-        <input type = "foto" name = "foto" [(ngModel)] = "vehi.foto" #kilometros = "ngModel" />
+        <!--
+        <input type = "text" name = "foto" [(ngModel)] = "auto.foto"   />
+        -->
+
          <br>
 
     <br>
     <button type="submit" name ="submit" class="btn btn-success" (click) = "validar()" [disabled]="!formcargaVehiculo.form.valid"  >cargar vehiculo</button>
 
+    <button type="mostrarvehiculos" name ="mostrar" class="btn btn-success" (click) = "mostrar()"  > mostrar vehiculos</button>
 
 
 
 </form>
+
+<br>
+<br>
+<br>
+
+
+
+

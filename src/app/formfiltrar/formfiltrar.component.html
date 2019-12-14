@@ -1,8 +1,16 @@
 
-<div>  
-  <input type="button" value="descargar PDF" (click)="captureScreen()"/>  
-  <input type="button" value="cargar vehiculo" (click)="cargarVehiculo()"/>  
-</div> 
+<div class="wrapper" >  
+  <button type="submit" name ="submit" class="btn btn-success" value="descargar PDF" (click)="captureScreen()" >  descargar PDF</button>
+  
+  <button type="submit"  style="margin-left:30px;"  name ="submit" class="btn btn-success" value="cargar vehiculo" (click)="cargarVehiculo()">   cargar vehiculo</button>
+</div>
+
+<!--
+<button type="submit" name ="submit" class="btn btn-success" (click) = "validar()"   >cargar vehiculo</button>
+<button type="button" name ="mostrar" class="btn btn-success" (click) = "mostrar()"  > mostrar vehiculos</button>
+-->
+
+
 
 <table>
 <td>
@@ -61,6 +69,8 @@ Filtrado por tipo:
 </table>
 </ul>
 <br>
+
+
 
 
 
