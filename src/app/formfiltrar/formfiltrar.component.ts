@@ -8,6 +8,7 @@ import { Component, OnInit, ElementRef ,ViewChild} from '@angular/core';
 import * as jspdf from 'jspdf';  
 import html2canvas from 'html2canvas'; 
 import { Router } from '@angular/router';
+import { Concesionaria } from '../modelos/concesionaria';
 
 @Component({
   selector: 'app-formfiltrar',
@@ -15,10 +16,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./formfiltrar.component.css']
 })
 export class FormfiltrarComponent implements OnInit {
+  
+  razonSocial:string='';
   tipos = new Array<string>();
   localidades = new Array<string>();
   concesionarias = new Array<string>();
-
+  _concesionaria:Concesionaria;
   listaOriginal:Array<auto>;//esta es la original
   tipoSeleccionado = "auto";
   localidadSeleccionada = "avellaneda";
@@ -74,7 +77,10 @@ export class FormfiltrarComponent implements OnInit {
 
    ngOnInit() {
     this.traerdatos();//Se eejcuta y pueden x segundos
-   }
+    this._concesionaria = JSON.parse(localStorage.getItem('concesionaria'));
+    this.razonSocial = this._concesionaria.razon_social;
+  
+  }
    
    traerdatos() {
     //let aux = new Array<auto>();

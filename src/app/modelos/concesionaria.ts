@@ -1,4 +1,4 @@
-export class concesionaria {
+export class Concesionaria {
 
     /*
     public email:string;

@@ -1,9 +1,5 @@
+{{razonSocial}}
 
-<div class="wrapper" >  
-  <button type="submit" name ="submit" class="btn btn-success" value="descargar PDF" (click)="captureScreen()" >  descargar PDF</button>
-  
-  <button type="submit"  style="margin-left:30px;"  name ="submit" class="btn btn-success" value="cargar vehiculo" (click)="cargarVehiculo()">   cargar vehiculo</button>
-</div>
 
 <!--
 <button type="submit" name ="submit" class="btn btn-success" (click) = "validar()"   >cargar vehiculo</button>
@@ -44,7 +40,7 @@ Filtrado por tipo:
 
   <!-- {{mostrar}} -->
   <h2>Estadistica vehiculos</h2>
-<ul>    
+    
      
 <table id="contentToConvert" mdbTable striped="true" bordered="true" >
     
@@ -67,10 +63,14 @@ Filtrado por tipo:
         <!-- {{item.foto}}-->
     </tbody>
 </table>
-</ul>
+
 <br>
 
-
+<div class="wrapper" >  
+  <button type="submit" name ="submit" class="btn btn-success" value="descargar PDF" (click)="captureScreen()" >  descargar PDF</button>
+  
+  <button type="submit"  style="margin-left:30px;"  name ="submit" class="btn btn-success" value="cargar vehiculo" (click)="cargarVehiculo()">   cargar vehiculo</button>
+</div>
 
 
 

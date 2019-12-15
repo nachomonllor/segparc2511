@@ -62,6 +62,9 @@ export class AuthservicioService {
   }
 
 
+ 
+
+
 logout(): void {
   this.isLoggedIn = false;
   localStorage.setItem('token', null);

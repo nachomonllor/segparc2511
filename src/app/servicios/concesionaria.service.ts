@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { concesionaria } from '../modelos/concesionaria';
+import { filter } from 'rxjs/operators';
+import { Concesionaria } from '../modelos/concesionaria';
+import { cliente } from '../modelos/cliente';
 
 
 @Injectable({
@@ -15,7 +17,7 @@ export class ConcesionariaService {
 
   }
   
-  post(_conces: concesionaria):Observable<any> {
+  post(_conces: Concesionaria):Observable<any> {
     
     let concesionaria ={ cliente: _conces }
     console.log(_conces);
@@ -24,4 +26,12 @@ export class ConcesionariaService {
 
 
   }
+
+  getConcesionaria(_cli:cliente){
+
+
+    return this.http.get<any>(this.urllogin);
+
+  }
 }
+
