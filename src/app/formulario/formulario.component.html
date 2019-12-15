@@ -9,13 +9,21 @@
     <input type="text" name = "razon_social" [(ngModel)]="conces.razon_social" #razon_social="ngModel" razon_social required />
        <div>  la razon social es requerida </div>
     <br>
+
+    <!--
     Telefono:<br>
     <input type="text" name = "telefono" [(ngModel)]="conces.telefono" #telefono="ngModel" telefono required />
        <div >  el telefono es requerido </div>
     <br>
+    -->
+    
+    Telefono (Solo numeros):<br>
+    <input (keypress)="numberOnly($event)" type="text" name = "telefono2">
+    
 
+    <br>
     Localidad: <br>
-    <select class="browser-default custom-select" [(ngModel)]= 'localidadSeleccionada' (change)="filtrarPorLocalidad($event)" >
+    <select class="browser-default custom-select" [(ngModel)]= 'localidadSeleccionada' name ="localidad" >
         <option *ngFor="let l of localidades" [ngValue]="l">{{l}}</option>
       </select>
     <br>
@@ -38,6 +46,6 @@
     <br>
 
     <!-- [disabled]="!consecionariaForm.form.valid" -->
-    <button type="submit" name ="submit" class="btn btn-success" (click) = "validar()" [disabled]="!consecionariaForm.form.valid"  >Votar</button>
+    <button type="submit" name ="submit" class="btn btn-success" (click) = "validar()" [disabled]="!consecionariaForm.form.valid"  >Enviar</button>
 
 </form>

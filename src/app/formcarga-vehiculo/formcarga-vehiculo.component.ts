@@ -35,7 +35,9 @@ export class FormcargaVehiculoComponent implements OnInit {
 
   concesionarias = new Array<string>();
 
-   marca:string;
+   marcasAutos:string;
+
+
    modelo:string;
    an:string;
    tipo:string;
@@ -56,6 +58,7 @@ export class FormcargaVehiculoComponent implements OnInit {
          this.anios.push(i);
      }
 
+     
      this.marcas = new Array<string>();
     const marcasaux = [
                 'Abarth',	'Alfa Romeo',	'Aston Martin',	'Audi',	'Bentley',
@@ -68,7 +71,9 @@ export class FormcargaVehiculoComponent implements OnInit {
           this.marcas.push(marcasaux[i]);
       }
     
-     this.marcaSeleccionada = this.marcas[0];
+     
+
+     //this.marcaSeleccionada = this.marcas[0];
      
      var modelosaux = ['A1', 'A2', 'A3', 'B1','B2','B3','B4', 'Q1','Q2','Q5','Q9'];
      this.modelos = new Array<string>();
@@ -113,14 +118,6 @@ export class FormcargaVehiculoComponent implements OnInit {
   ngOnInit() {
     //this.ta. getautos();
   }
-  
-  /*
-  cargarAuto() {
-     console.log(this.unAuto);
-      
-     this.addAuto(this.unAuto);
-
-  }*/
    
   mostrar() {
     this.router.navigate(['/filtrarVehiculos']);
@@ -128,14 +125,11 @@ export class FormcargaVehiculoComponent implements OnInit {
 
 
   cargarAuto() {
-    //console.log("hola");
-    //console.log(this.conces.email  + " " + this.conces.pass);
     console.log(this.unAuto);
 
     this.as.post(this.unAuto)
     //.subscribe(token => { console.log("token desde login"+token) });
     .subscribe(a => this.listaautos.push(this.unAuto));
-    
 
   }
 
