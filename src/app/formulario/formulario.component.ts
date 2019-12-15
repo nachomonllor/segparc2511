@@ -16,10 +16,18 @@ export class FormularioComponent implements OnInit {
 
  conces: Concesionaria;
 
-
+   localidades = new Array<string>();
+   
   constructor(private _concesServ : ConcesionariaService) 
   {
       this.conces = new Concesionaria("", "","","","","");
+
+
+      this.localidades.push("avellaneda") ;
+      this.localidades.push("ezpeleta") ;
+      this.localidades.push("quilmes") ;
+      this.localidades.push("wilde") ;
+      this.localidades.push("sarandi") ;
    }
 
 

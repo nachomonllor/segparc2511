@@ -5,6 +5,21 @@
     <input type="email" name = "email" [(ngModel)]="conces.email" #email="ngModel" email required />
     <div *ngIf = 'email.invalid && (email.dirty || email.touched)' >   el email es requerido </div>
     <br>
+    Razon social:<br>
+    <input type="text" name = "razon_social" [(ngModel)]="conces.razon_social" #razon_social="ngModel" razon_social required />
+       <div>  la razon social es requerida </div>
+    <br>
+    Telefono:<br>
+    <input type="text" name = "telefono" [(ngModel)]="conces.telefono" #telefono="ngModel" telefono required />
+       <div >  el telefono es requerido </div>
+    <br>
+
+    Localidad: <br>
+    <select class="browser-default custom-select" [(ngModel)]= 'localidadSeleccionada' (change)="filtrarPorLocalidad($event)" >
+        <option *ngFor="let l of localidades" [ngValue]="l">{{l}}</option>
+      </select>
+    <br>
+
     Password:<br>
     <input type ="password" name = "password" [(ngModel)] = "conces.pass" #pass = "ngModel" password  required minlength="3"  />
     <div *ngIf = 'pass.invalid && (pass.dirty || pass.touched)'  >  
