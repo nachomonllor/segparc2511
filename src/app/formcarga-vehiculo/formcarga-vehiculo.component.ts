@@ -3,9 +3,11 @@ import { vehiculo } from '../modelos/vehiculo';
 import { HttpClient } from '@angular/common/http';
 import { cliente } from '../modelos/cliente';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, catchError } from 'rxjs/operators';
 import { auto } from '../modelos/auto';
 import { Router } from '@angular/router';
+import { AutoService } from '../servicios/auto.service';
+import { TraerautosService } from '../servicios/traerautos.service';
 //import { Tipo } from '../modelos/tipo';
 
 @Component({
@@ -42,10 +44,10 @@ export class FormcargaVehiculoComponent implements OnInit {
  // lista:Array<vehiculo>;
   //tipo:Tipo;
 
-   autos = new Array<auto>();
+   listaautos = new Array<auto>();
   
 
-  constructor(private http: HttpClient, private router: Router) {
+  constructor( private http: HttpClient, private as:AutoService, private ta: TraerautosService, private router: Router) {
      //this.lista = new Array<vehiculo>();
      //this.vehi = new vehiculo("","","",0, "auto"  ,"");
      
@@ -96,32 +98,45 @@ export class FormcargaVehiculoComponent implements OnInit {
 
 
      //this.unAuto = new auto( this.marca, this.modelo, this.an, 0,this.tipo, "", this.localidad, this.concesionaria);
-     this.unAuto = new auto( "nuevamarca", "666", "1000", 0,"ggg", "ddd", "transilvania", "hhh");
+     this.unAuto = new auto( "", "", "", 0,"", "", "", "");
 
    }
 
+   /*
+  conces: concesionaria;
+  constructor(private _concesServ : ConcesionariaService) 
+  {
+      this.conces = new concesionaria("", "","","","","");
+   }
+ */
+
   ngOnInit() {
+    //this.ta. getautos();
   }
   
-  validar() {
+  /*
+  cargarAuto() {
      console.log(this.unAuto);
       
      this.addAuto(this.unAuto);
 
-  }
+  }*/
    
   mostrar() {
     this.router.navigate(['/filtrarVehiculos']);
   }
 
 
-  private urlauto = "http://localhost:3003/auto";
+  cargarAuto() {
+    //console.log("hola");
+    //console.log(this.conces.email  + " " + this.conces.pass);
+    console.log(this.unAuto);
 
-  addAuto (a: auto): Observable<auto> {
-    return this.http.post<auto>(this.urlauto, a)
-      .pipe(
-        //catchError(this.handleError('addHero', hero))
-      );
+    this.as.post(this.unAuto)
+    //.subscribe(token => { console.log("token desde login"+token) });
+    .subscribe(a => this.listaautos.push(this.unAuto));
+    
+
   }
 
   /*

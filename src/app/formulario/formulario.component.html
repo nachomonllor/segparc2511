@@ -1,11 +1,11 @@
 
 <form #consecionariaForm="ngForm">
 
-    Email:
+    Email:<br>
     <input type="email" name = "email" [(ngModel)]="conces.email" #email="ngModel" email required />
     <div *ngIf = 'email.invalid && (email.dirty || email.touched)' >   el email es requerido </div>
     <br>
-    Password:
+    Password:<br>
     <input type ="password" name = "password" [(ngModel)] = "conces.pass" #pass = "ngModel" password  required minlength="3"  />
     <div *ngIf = 'pass.invalid && (pass.dirty || pass.touched)'  >  
         <div *ngIf = 'pass.errors.required'>
@@ -16,7 +16,7 @@
         </div>
     </div>
     <br>
-    Nombre de usuario:
+    Nombre de usuario:<br>
     <input type="user" name = "user" [(ngModel)]="conces.user" #user="ngModel" user required />
     <div *ngIf = 'user.invalid && (user.dirty || user.touched)' >   el usuario es requerido </div>
 

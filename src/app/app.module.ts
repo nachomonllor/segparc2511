@@ -14,7 +14,7 @@ import { FormMostrarComponent } from './form-mostrar/form-mostrar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormfiltrarComponent } from './formfiltrar/formfiltrar.component';
 import { DetallevehiculoComponent } from './detallevehiculo/detallevehiculo.component';
-import { ConversorpdfComponent } from './conversorpdf/conversorpdf.component';
+//import { ConversorpdfComponent } from './conversorpdf/conversorpdf.component';
 
 import { WavesModule, TableModule } from 'angular-bootstrap-md';
 
@@ -45,7 +45,7 @@ import {
     
     DetallevehiculoComponent,
     
-    ConversorpdfComponent,
+    //ConversorpdfComponent,
 
   //  MatSelectModule
 
