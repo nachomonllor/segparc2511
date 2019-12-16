@@ -7,24 +7,16 @@
      <input type = "marca" name = "marca" [(ngModel)] = "vehi.marca" #marca = "ngModel" marca required/>
     -->
 
-    <select class="browser-default custom-select" [(ngModel)]= 'marca' name = "marca" (change) = "elegirModelo($event.target.value)" >
+    <select class="browser-default custom-select" [(ngModel)]= 'unAuto.marca' name = "marca" (change) = "elegirModelo($event.target.value)" >
         <option *ngFor="let m of marcasAutos" [value]="m.value">{{m.display}}</option>
     </select>
 
         <br>
     Modelo:
     <br>
-    
-    <!--
-    <input type = "modelo" name = "modelo" [(ngModel)] = "vehi.modelo" #modelo = "ngModel" marca required/>
-        <div *ngIf = 'modelo.invalid && (modelo.dirty ||modelo.touched)' >
-            el modelo es requerido
-        </div>
-    -->
 
-     
-    <select class="browser-default custom-select" [(ngModel)]= 'modelo'   name ="modelo" >
-        <option *ngFor="let m of modelosAutos" [ngValue]="m">{{m}}</option>
+    <select class="browser-default custom-select" [(ngModel)]= 'unAuto.modelo'   name ="modelo" >
+        <option *ngFor="let m of modelosAutos" [value]="m">{{m}}</option>
     </select>
      
 

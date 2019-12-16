@@ -23,12 +23,6 @@ export class FormcargaVehiculoComponent implements OnInit {
 
   anios = new Array<number>();
 
-  //marcasAutos= [];
-  marcaSeleccionada= "";
-
- 
-  modeloSeleccionado = "";
-
   tipos = new Array<string>();
 
   localidades = new Array<string>();
@@ -44,6 +38,7 @@ export class FormcargaVehiculoComponent implements OnInit {
    localidad:string;
    concesionaria:string;
    kilometros:number =0;
+   foto:string;
  // lista:Array<vehiculo>;
   //tipo:Tipo;
 
@@ -88,19 +83,20 @@ export class FormcargaVehiculoComponent implements OnInit {
      this.localidades.push("sarandi") ;
 
 
-     this.concesionarias.push("concesionaria clio");
-     this.concesionarias.push("concesionaria ford");
-     this.concesionarias.push("concesionaria auto");
-     this.concesionarias.push("concesionaria camion");
-     this.concesionarias.push("concesionaria camioneta");
-     this.concesionarias.push("concesionaria BMW");
+     this.concesionarias.push("concesionaria A");
+     this.concesionarias.push("concesionaria B");
+     this.concesionarias.push("concesionaria C");
+     this.concesionarias.push("concesionaria D");
+     this.concesionarias.push("concesionaria E");
+     this.concesionarias.push("concesionaria F");
 
 
 
 
-     //this.unAuto = new auto( this.marca, this.modelo, this.an, 0,this.tipo, "", this.localidad, this.concesionaria);
-     this.unAuto = new auto( this.marca, this.modelo, this.an,this.kilometros,
-                "", "", "", "");
+     this.unAuto = new auto( this.marca, this.modelo, this.an, this.kilometros,this.tipo, this.foto, this.localidad, this.concesionaria);
+     
+     //this.unAuto = new auto( "", "", "",0,
+      //"", "", "", "");
 
    }
 
@@ -152,30 +148,6 @@ export class FormcargaVehiculoComponent implements OnInit {
 
   }
 
-  /*
-  postAuto():Observable<any> {
-    
-    let cliente ={ auto:_auto }
-    console.log(_auto);
-    return this.http.post<any>(this.urlauto, this.unAuto)
-    
-    .pipe( map(token => {
-      
-      if(token && token.token){
-         //aca guardamos en el local storage
-         console.log("token desde el service" + token.token);
-      }
-      return token;
-    
-   //.pipe(map((response) => token.json()))
-
-  }));
-
-  
-  }
-  */
-
-  
 
 
 }
