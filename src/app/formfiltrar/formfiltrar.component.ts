@@ -55,12 +55,12 @@ export class FormfiltrarComponent implements OnInit {
      this.localidades.push("wilde") ;
      this.localidades.push("sarandi") ;
 
-     this.concesionarias.push("concesionaria tito"); 
-     this.concesionarias.push("concesionaria clio"); 
-     this.concesionarias.push("concesionaria peugeot"); 
-     this.concesionarias.push("concesionaria yamaha"); 
-     this.concesionarias.push("concesionaria camion"); 
-     this.concesionarias.push("concesionaria camioneta");
+     this.concesionarias.push("concesionaria A"); 
+     this.concesionarias.push("concesionaria B"); 
+     this.concesionarias.push("concesionaria C"); 
+     this.concesionarias.push("concesionaria D"); 
+     this.concesionarias.push("concesionaria E"); 
+     this.concesionarias.push("concesionaria F");
 
      
 
