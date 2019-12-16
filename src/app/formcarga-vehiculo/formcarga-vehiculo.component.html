@@ -7,8 +7,8 @@
      <input type = "marca" name = "marca" [(ngModel)] = "vehi.marca" #marca = "ngModel" marca required/>
     -->
 
-    <select class="browser-default custom-select" [(ngModel)]= 'unAuto.marca' name = "marca"  >
-        <option *ngFor="let m of marcas" [ngValue]="m">{{m}}</option>
+    <select class="browser-default custom-select" [(ngModel)]= 'marca' name = "marca" (change) = "elegirModelo($event.target.value)" >
+        <option *ngFor="let m of marcasAutos" [value]="m.value">{{m.display}}</option>
     </select>
 
         <br>
@@ -23,8 +23,8 @@
     -->
 
      
-    <select class="browser-default custom-select" [(ngModel)]= 'unAuto.modelo'   name ="modelo" >
-        <option *ngFor="let m of modelos" [ngValue]="m">{{m}}</option>
+    <select class="browser-default custom-select" [(ngModel)]= 'modelo'   name ="modelo" >
+        <option *ngFor="let m of modelosAutos" [ngValue]="m">{{m}}</option>
     </select>
      
 
@@ -94,33 +94,6 @@
 </form>
 
 <br>
-<br>
-<br>
-
-
-<!--
-<table id="contentToConvert" mdbTable striped="true" bordered="true" >
-    
-    <thead class="grey lighten-1 black-text">
-      <tr>
-        <th *ngFor="let head of headElements" scope="col">{{head}} </th>
-      </tr>
-    </thead>
-  
-  
-      <tbody>
-      <tr *ngFor ="let item of listaautos">
-          <th scope="row" > {{item.marca}} </th>
-          <td> {{item.modelo}}</td>
-          <td> {{item.an}}</td>
-          <td> {{item.kilometros}}</td>
-          <td> {{item.tipo}} </td>
-          <td> {{item.localidad}}</td>
-          <td>  {{item.concesionaria}}</td>
-           {{item.foto}}
-      </tbody>
-  </table>
--->
 
 
 
