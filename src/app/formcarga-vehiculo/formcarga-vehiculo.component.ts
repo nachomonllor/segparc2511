@@ -44,7 +44,7 @@ export class FormcargaVehiculoComponent implements OnInit {
 
    listaautos = new Array<auto>();
   
-   public marcasAutos = [
+   public marcas = [
     {value:'Alfa Romeo', display:'Alfa Romeo'},
     {value:'Audi', display:'Audi'},
     {value:'BMW', display:'BMW'},
@@ -58,19 +58,6 @@ export class FormcargaVehiculoComponent implements OnInit {
          this.anios.push(i);
      }
 
-  
-     //this.marcas = new Array<string>();
-    // this.marcasAutos = ['Alfa Romeo',	'Audi',	'BMW'];
-                
-     
-
-     //this.marcaSeleccionada = this.marcas[0];
-     /*
-     var modelosaux = ['A1', 'A2', 'A3', 'B1','B2','B3','B4', 'Q1','Q2','Q5','Q9'];
-     this.modelos = new Array<string>();
-     for(let i =0; i<modelosaux.length; i++) {
-       this.modelos.push(modelosaux[i]);
-     }*/
 
      this.tipos.push("auto");
      this.tipos.push("camioneta");
@@ -100,26 +87,111 @@ export class FormcargaVehiculoComponent implements OnInit {
 
    }
 
-   modelosAutos = new Array<string>();
+  // marcasAutos = new Array<string>();
+  //marcasCamionetas = [];
+  // modelosCamiones = new Array<string>();
+   elegirVehiculo(selected) {
+
+      this.modelos = new Array<string>();
+
+       if(selected == "auto") {
+        //  this.marcasAutos = new Array<string>();
+        //  this.marcasAutos.push("Alfa Romeo");
+         // this.marcasAutos.push("Audi");
+         // this.marcasAutos.push("BMW");
+
+         this.marcas = [
+          {value:'Alfa Romeo', display:'Alfa Romeo'},
+          {value:'Audi', display:'Audi'},
+          {value:'BMW', display:'BMW'},
+        ];
+       }
+       else if(selected == "camioneta") {
+          //this.modelosCamionetas.push("Ford F-150");
+          //this.modelosCamionetas.push("Honda Ridgeline");
+          this.marcas = [
+          {value:'Ford F-150', display:'Ford F-150'},
+          {value:'Honda Ridgeline', display:'Honda Ridgeline'},
+          {value:'Toyota Tundra', display:'Toyota Tundra'}];
+
+       }
+       else {
+
+            //marcas camiones
+        this.marcas = [
+          {value:'Scania', display:'Scania'},
+          {value:'Mercedes', display:'Mercedes'},
+          {value:'Mack Trucks', display:'Mack Trucks'}];
+
+
+       }
+   }
+
+   
+   modelos= new Array<string>();
+   //modelosCamiones = new Array<string>();
+  // modelosCamionetas = new Array<string>();
    elegirModelo(selected) {
       if(selected == "Alfa Romeo") {
-          this.modelosAutos= new Array<string>();
-          this.modelosAutos.push("Alfa Romeo 1");
-          this.modelosAutos.push("Alfa Romeo 2");
-          this.modelosAutos.push("Alfa Romeo 3");
+          this.modelos= new Array<string>();
+          this.modelos.push("Alfa Romeo 1");
+          this.modelos.push("Alfa Romeo 2");
+          this.modelos.push("Alfa Romeo 3");
       }
       else if(selected == "Audi") {
-        this.modelosAutos= new Array<string>();
-        this.modelosAutos.push("Audi 1");
-        this.modelosAutos.push("Audi 2");
-        this.modelosAutos.push("Audi 3");
+        this.modelos= new Array<string>();
+        this.modelos.push("Audi 1");
+        this.modelos.push("Audi 2");
+        this.modelos.push("Audi 3");
       }
       else if(selected == "BMW") {
-        this.modelosAutos= new Array<string>();
-        this.modelosAutos.push("BMW 1");
-        this.modelosAutos.push("BMW 2");
-        this.modelosAutos.push("BMW 3");
+        this.modelos= new Array<string>();
+        this.modelos.push("BMW 1");
+        this.modelos.push("BMW 2");
+        this.modelos.push("BMW 3");
       }
+     else if(selected == 'Ford F-150'  ) {
+      this.modelos= new Array<string>();
+      this.modelos.push("Ford F-150 1");
+      this.modelos.push("Ford F-150 2");
+      this.modelos.push("Ford F-150 3");
+     }
+     else if(selected == 'Honda Ridgeline') {
+      this.modelos= new Array<string>();
+      this.modelos.push("Honda Ridgeline 1");
+      this.modelos.push("Honda Ridgeline 2");
+      this.modelos.push("Honda Ridgeline 3");
+     }
+     else if(selected == 'Toyota Tundra' ) {
+      this.modelos= new Array<string>();
+      this.modelos.push("Toyota Tundra 1");
+      this.modelos.push("Toyota Tundra 2");
+      this.modelos.push("Toyota Tundra 3");
+     }
+     else if(selected == 'Scania') {
+      this.modelos= new Array<string>();
+      this.modelos.push("Scania 1");
+      this.modelos.push("Scania 2");
+      this.modelos.push("Scania 3");
+      this.modelos.push("Scania 4");
+     }
+     else if(selected == 'Mercedes') {
+      this.modelos= new Array<string>();
+      this.modelos.push("Mercedes 1");
+      this.modelos.push("Mercedes 2");
+      this.modelos.push("Mercedes 3");
+      this.modelos.push("Mercedes 4");
+     }
+     else if(selected == 'Mack Trucks' ) {
+      this.modelos= new Array<string>();
+      this.modelos.push("Mack Trucks 1");
+      this.modelos.push("Mack Trucks 2");
+     
+     }
+
+
+
+
    }
 
    /*

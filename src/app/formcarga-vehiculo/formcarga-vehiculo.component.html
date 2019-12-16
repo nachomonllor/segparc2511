@@ -1,6 +1,16 @@
 <h2>Cargar Vehiculo:</h2>
 <br>
 <form #formcargaVehiculo = "ngForm">
+
+    Tipo: 
+    
+    <br>
+       
+    <select class="browser-default custom-select" [(ngModel)]= 'unAuto.tipo'   name ="tipo" (change) ="elegirVehiculo($event.target.value)">
+        <option *ngFor="let t of tipos" [value]="t">{{t}}</option>
+    </select>
+    <br>
+
     Marca:
     <br>
     <!--
@@ -8,7 +18,7 @@
     -->
 
     <select class="browser-default custom-select" [(ngModel)]= 'unAuto.marca' name = "marca" (change) = "elegirModelo($event.target.value)" >
-        <option *ngFor="let m of marcasAutos" [value]="m.value">{{m.display}}</option>
+        <option *ngFor="let m of marcas" [value]="m.value">{{m.display}}</option>
     </select>
 
         <br>
@@ -16,7 +26,7 @@
     <br>
 
     <select class="browser-default custom-select" [(ngModel)]= 'unAuto.modelo'   name ="modelo" >
-        <option *ngFor="let m of modelosAutos" [value]="m">{{m}}</option>
+        <option *ngFor="let m of modelos" [value]="m">{{m}}</option>
     </select>
      
 
@@ -42,19 +52,7 @@
       
        <br>
 
-       Tipo: 
-       <br>
-       <!--
-       <select name = "selecttipo" class="form-control" id="exampleFormControlSelect1" required [(ngModel)] = "vehi.tipo" >
-            <option>auto</option>
-            <option>camioneta</option>
-            <option>camion</option>
-        </select>
-        -->
-        <select class="browser-default custom-select" [(ngModel)]= 'unAuto.tipo'   name ="tipo" >
-            <option *ngFor="let t of tipos" [ngValue]="t">{{t}}</option>
-        </select>
-        <br>
+       
 
         Localidad:
         <select class="browser-default custom-select" [(ngModel)]= 'unAuto.localidad'   name ="localidad" >
