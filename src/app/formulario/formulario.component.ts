@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ConcesionariaService } from '../servicios/concesionaria.service';
 import { Concesionaria } from '../modelos/concesionaria';
 import { Validators, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulario',
@@ -29,7 +30,7 @@ export class FormularioComponent implements OnInit {
   ]);
   */
 
-  constructor(private _concesServ : ConcesionariaService) 
+  constructor(private _concesServ : ConcesionariaService,private router: Router ) 
   {
       this.conces = new Concesionaria("", "","","","","");
 
@@ -62,8 +63,14 @@ export class FormularioComponent implements OnInit {
     this._concesServ.post(this.conces)
     .subscribe(token => { console.log("token desde login"+token) });
     
-
+    this.router.navigate(['/login']);
   }
+
+  /*
+  redirigirAlHome() {
+    this.router.navigate(['/login']);
+  }*/
+
 
 
 }

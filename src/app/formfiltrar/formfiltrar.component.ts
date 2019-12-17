@@ -78,6 +78,7 @@ export class FormfiltrarComponent implements OnInit {
    ngOnInit() {
     this.traerdatos();//Se eejcuta y pueden x segundos
     this._concesionaria = JSON.parse(localStorage.getItem('concesionaria'));
+    console.log(this._concesionaria.razon_social);
     this.razonSocial = this._concesionaria.razon_social;
   
   }
