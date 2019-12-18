@@ -3,16 +3,20 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { auto } from '../modelos/auto';
 import { Observable } from 'rxjs';
 import { AuthservicioService } from '../auth/authservicio.service';
+import { variables } from '../modelos/variables';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AutoService {
 
-  private urlauto = "http://localhost:3003/auto";
+  v = new variables();
+  private urlauto =  this.v.urlBase + "auto"; //"http://localhost:3003/auto";
+  
+  //variableUrl:variables = new variables();
 
   constructor(private http: HttpClient, private auth:AuthservicioService) {
-
+     this.v = new variables();
   }
   
   
@@ -26,10 +30,13 @@ export class AutoService {
     let token =this.auth.devolverToken(); 
     let a ={ auto: _auto }
     console.log(JSON.stringify(_auto));
-    return this.http.post<any>(this.urlauto, a,{
+    /*return this.http.post<any>(this.urlauto, a,{
       headers: new HttpHeaders().set('token',token ),
     })
-    
+    */
+    return this.http.post<any>(this.v.urlBase + "auto" , a,{
+      headers: new HttpHeaders().set('token',token ),
+    })
 
 
   }

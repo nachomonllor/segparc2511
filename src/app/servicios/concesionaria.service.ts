@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { Concesionaria } from '../modelos/concesionaria';
 import { cliente } from '../modelos/cliente';
+import { variables } from '../modelos/variables';
 
 
 @Injectable({
@@ -11,7 +12,8 @@ import { cliente } from '../modelos/cliente';
 })
 export class ConcesionariaService {
 
-  private urllogin = "http://localhost:3003/clientes";
+  variableUrl:variables = new variables();
+  private urllogin =  this.variableUrl.urlBase + "clientes";
 
   constructor(private http: HttpClient) {
 

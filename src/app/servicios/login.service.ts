@@ -6,13 +6,15 @@ import { Observable } from 'rxjs';
 import { map} from 'rxjs/operators';
 import { tokenName } from '@angular/compiler';
 import { cliente } from '../modelos/cliente';
+import { variables } from '../modelos/variables';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  private urllogin = "http://localhost:3003/login";
+  variableUrl = new variables();
+  private urllogin = this.variableUrl.urlBase + "login"; //"http://localhost:3003/login";
 
   constructor(private http: HttpClient) {
 

@@ -5,14 +5,20 @@ import { map } from 'rxjs/operators';
 import { vehiculo } from '../modelos/vehiculo';
 import { auto } from '../modelos/auto';
 import { AuthservicioService } from '../auth/authservicio.service';
+import { variables } from '../modelos/variables';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TraerautosService {
 
+
+  variablesUrl = new variables();
+   url = this.variablesUrl.urlBase + "auto"; //"http://localhost:3003/auto";
+
   constructor(private http: HttpClient, private auth:AuthservicioService) { }
 
+  
 /*
   postlogin(_cli:cliente):Observable<any> {
     
@@ -32,8 +38,9 @@ export class TraerautosService {
   }));
   */
 
-   url = "http://localhost:3003/auto";
-
+   
+   
+   
    getautos():Observable<any> {
      
     let token =this.auth.devolverToken(); 

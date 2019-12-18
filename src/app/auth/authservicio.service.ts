@@ -4,6 +4,7 @@ import { cliente } from '../modelos/cliente';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { variables } from '../modelos/variables';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,9 @@ import { map } from 'rxjs/operators';
 //metodo para identificar si el usuario esta logueado
 export class AuthservicioService {
   
-  private urllogin = "http://localhost:3003/login";
+  variableUrl = new variables();
+  private urllogin = this.variableUrl.urlBase + "login";
+  ////private urllogin = "http://localhost:3003/login";
   isLoggedIn = false;
   //jugador:Jugador;
 
