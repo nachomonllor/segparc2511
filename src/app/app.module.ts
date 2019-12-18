@@ -29,6 +29,7 @@ import {
   MatCardModule,
   MatTableModule
 } from "@angular/material";
+import { NavvarComponent } from './navvar/navvar.component';
 
 
 @NgModule({
@@ -44,6 +45,8 @@ import {
     FormfiltrarComponent,
     
     DetallevehiculoComponent,
+    
+    NavvarComponent,
     
     //ConversorpdfComponent,
 
